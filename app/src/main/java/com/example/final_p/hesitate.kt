@@ -130,6 +130,11 @@ class hesitate : AppCompatActivity() {
             c.moveToFirst() //從第一筆開始輸出
             items.clear() //清空舊資料
 
+            if(c.count < 2) {
+                showToast("請輸入至少兩項食物")
+                return@setOnClickListener
+            }
+
             var all = 0
 
             for (i in 0 until c.count) {
