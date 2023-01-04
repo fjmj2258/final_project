@@ -11,9 +11,18 @@ import android.widget.Button
 class noideal : AppCompatActivity() {
 
     //食物名單
-    val breakfastlist = arrayOf("7-11", "全家", "萊爾富", "OK", "麥當勞", "肯德基", "漢堡王")
-    val lunchlist = arrayOf("北科學餐","義大利麵","拉麵")
-    val dinnerlist = arrayOf("湯神牛肉麵","韓老六滷味","麥當勞","蛋包飯","章魚燒","提拉米蘇")
+    val breakfastlist = arrayOf("7-11", "全家", "萊爾富", "OK", "麥當勞",
+        "肯德基", "漢堡王","燕麥","優格","水煮蛋","沙拉","蘿蔔糕","鐵板麵",
+        "蛋吐司","厚片吐司","三明治","豆漿","米漿","燒餅油條","奶茶","蛋餅","漢堡",
+        "蔥抓餅","玉米濃湯","煎餃","飯糰","麵線","饅頭")
+    val lunchlist = arrayOf("北科學餐","義大利麵","拉麵","炒麵","炒飯","豬血湯",
+        "粥","肉燥飯","虱目魚湯","油飯","便當","自助餐","乾麵","牛肉麵","速食","pizza",
+        "沙拉","咖哩飯","御飯糰","關東煮","烏龍麵","壽司","微波食品","麵包","泡麵",
+        "小火鍋")
+    val dinnerlist = arrayOf("牛肉麵","滷味","麥當勞","蛋包飯","章魚燒","不吃",
+        "涼麵","水餃","粥","羹","麵線","麻油雞","排骨湯","蛋炒飯","燉飯","沙拉",
+        "滷豬腳飯","鹹派","義大利麵","烤雞","炸雞")
+
 
     //存取食物名單長度
     var breakfastlistsize = breakfastlist.size
@@ -102,7 +111,8 @@ class noideal : AppCompatActivity() {
                     { breakfastnextshow = breakfastlist[(0..breakfastlistsize - 1).random()] }
                     else
                     { breakfurstbutton.setText(breakfastnextshow)
-                        breakfastlastshow = breakfastnextshow }
+                        breakfastlastshow = breakfastnextshow
+                    }
                 } } }
         true })
 
@@ -113,7 +123,7 @@ class noideal : AppCompatActivity() {
                 val msg = Message()
                 msg.what = 1
                 breakfasthandler.sendMessage(msg)
-                Thread.sleep(100)
+                Thread.sleep(75)
             }}).start() }
 
     // -----------------------------------------------------------------------------------------------
@@ -142,7 +152,7 @@ class noideal : AppCompatActivity() {
                 val msg = Message()
                 msg.what = 1
                 lunchhandler.sendMessage(msg)
-                Thread.sleep(100)
+                Thread.sleep(75)
             }}).start() }
 
     // -----------------------------------------------------------------------------------------------
@@ -171,7 +181,7 @@ class noideal : AppCompatActivity() {
                 val msg = Message()
                 msg.what = 1
                 dinnerhandler.sendMessage(msg)
-                Thread.sleep(100)
+                Thread.sleep(75)
             }}).start() }
 
     // -----------------------------------------------------------------------------------------------
